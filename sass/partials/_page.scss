@@ -1,0 +1,530 @@
+@import "compass/css3";
+
+//-----------------------------------------------
+// The following html5-boilerplate styles should
+// probably be customized for each site
+//-----------------------------------------------
+body, select, input, textarea {
+  color: $font-color;
+  // Set your base font here, to apply evenly
+  // font-family: 'new_macleans_reg', Georgia, serif;
+}
+
+//-----------------------------------
+// Add your own custom styles below
+//-----------------------------------
+
+body {}
+
+#container {
+  width:100%;
+}
+
+header.article-nav-header {
+	position:absolute;
+	width:100%;
+	height:22px;
+	top: 0px;
+	left: 0px;
+	color:white;
+	background:black;
+	&.front {
+		background:$thisweek;
+	}
+	&.national {
+		background:$national;
+	}
+	&.international {
+		background:$international;
+	}
+	&.society {
+		background:$yellow;
+	}
+	&.business {
+		background:$black;
+	}
+	button.navbar-collapsed {
+		float:left;
+		background:none;
+		border:none;
+		line-height:22px;
+		vertical-align:middle;
+		padding-top:4px;
+		.icon-bar {
+			display: block;
+			width: 16px;
+			height: 2px;
+			background-color: whiteSmoke;
+			-webkit-border-radius: 1px;
+			-moz-border-radius: 1px;
+			border-radius: 1px;
+			-webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+			-moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+			box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+			margin-bottom:3px;
+		}
+	}
+	h1 {
+	  display:inline;
+	  text-align:center;
+	  font-size:1.0em;
+	  font-weight:bold; 
+	}
+	span {
+	
+	}
+	.cat-title {
+	width:140px;
+	margin:0 auto;
+	}
+
+}
+header.home-header {
+	text-align:center;
+	h1 { 
+		text-indent:-9999px;
+		width:300px;
+		margin:5px auto 0;
+		height:75px;
+		background:url('images/mac_logo.jpg') no-repeat;
+		background-size:298px 74px;
+		background-color:white;
+	}
+	hr {
+		position:absolute;
+	}
+	.date {
+		text-transform:uppercase;
+		font-family: 'new_macleans_reg';
+		font-weight:900;
+		font-size:16px;
+		letter-spacing: 3px;
+	}
+}
+section.category {
+	width:100%;
+	color:white;
+	article {
+		color:$charcoal;
+		margin: 0 0px;
+		padding:0 0px;
+		border-bottom:1px solid $toc-borders;
+	}
+	h1 {
+		font-family: 'bentonsansbold';
+		font-weight:300;
+		height:16px;
+		color:white;
+		font-size:1.0em;
+		padding: 7px 0px 7px 6px;
+		margin: 0 0px;
+		line-height:16px;
+		vertical-align:middle;
+
+	}
+	h2 {
+		font-family: 'bentonsansbold';
+		font-weight:300;
+		font-size: 1.1875em;
+		padding-left:0;
+		line-height:1.1em;
+		a {
+			color:$charcoal;
+			text-decoration:none;
+			display:block;
+			padding: 11px 13px;
+			margin: -13px;
+			strong {
+				font-family:'bentonsans';
+				font-size:16px;
+				font-weight:normal;
+			}
+			b {
+				
+				font-weight:normal;
+			}
+		}
+	}
+	&.thisweek {
+		h1 { background:$thisweek; }
+		
+	}
+	&.national {
+		h1 { background:$national; }
+	}
+	&.international {
+		h1 { background:$international; }
+
+	}
+	&.society {
+		h1 { background:$yellow; }
+
+	}
+	&.business {
+		h1 { background:$black; }
+
+	}
+	&.bak {
+		h1 { background:$backpages; }
+
+	}
+	&.theend {
+		h1 { background:$black; }
+	}
+	article:last-child {
+		border-bottom:none;
+	}
+}
+#main {
+	&.masthead {
+		p {
+			margin:0px;
+			text-align:center;
+			font-family:'bentoncomp';
+			font-weight:350;
+			font-size:1.0em;
+			em {
+				text-transform:uppercase;
+				font-family: 'bentonsans';
+				font-style:normal;
+				font-size:0.75em;
+			}
+			b {
+			font-family:'bentonblack';
+			text-transform:uppercase;
+			font-size:0.8em;
+			font-weight:normal;
+			}
+		}
+	}
+	margin: 12px 12px 12px;
+	&.home {
+		margin-top:10px;
+	}
+	img {
+	max-width:100%;
+	}
+	.image-featured {
+		text-align:center;
+		a img {
+		  max-height:250px;
+		}
+	}
+	.editor-image-wrapper {
+		position:relative;
+		height:200px;
+		width:200px;
+		overflow:hidden;
+		margin:0 auto;
+		img {
+			max-height:250px;
+			max-width:none;
+			margin-left:-50%;
+		}
+	}
+	.wide-image-wrapper {
+		position:relative;
+		width:auto;
+		height:134px;
+		overflow:hidden;
+		margin:0 auto;
+		img {
+			max-height:250px;
+			max-width:none;
+			position:relative;
+			top:-50%;
+		}
+	}
+	.image-caption {
+		text-align:left;
+		margin: 5px auto 0;
+		clear:both;
+		float:none;
+		text-transform:uppercase;
+		font-size:0.6em;
+		color:#666;
+	}
+	.slug {
+		font-family: 'new_macleans_reg';
+		font-weight:bold;
+		text-transform:uppercase;
+		text-align:center;
+		letter-spacing:3px;
+		font-size:0.8em;
+		margin-top:1.5em;
+	}
+	blockquote {
+		margin-top:0.7em;
+		font-family: 'new_macleans_reg';
+		font-size:1.338em;
+		text-align:center;
+		small {
+			font-size:0.91em;
+			font-family: 'new_macleans_italic';
+			display:block;
+		}
+	}
+
+	.hedline h1 {
+		font-family:'bentoncompbold';
+		font-weight:100;
+		margin-top:0.2em;
+		margin-bottom:0.2em;
+		text-align:center;
+		line-height:0.95em;
+		font-size:2.4em;
+	}
+	.abstract {
+		font-family: 'bentonsans';
+		font-weight:300;
+		text-align:center;
+		font-size:1.13em;
+		line-height:1.35em;
+	}
+	.byline {
+		font-family:'bentonblack';
+		margin: 1.4em 0 0.9em;
+		font-size:0.737em;
+		text-align:center;
+		text-transform:uppercase;
+	}
+	.content {
+		font-family: 'macleans_reg';
+		font-size:1.228em;
+		line-height:1.22em;
+		text-align:left;
+		p {
+		text-indent:1.0em;
+		margin:0 0 0;
+
+		}
+		p:first-child {
+			text-indent:0;
+			margin-top:1.0em;
+		}
+		&.letters {
+		p { text-indent:0; margin:0 auto; }
+		b { display:block; margin: 0.8em 0 0; font-family:'bentoncompbold';
+		font-weight:normal; font-size:1.09em; }
+		em { display:block; margin:0.2em 0 0.8em; }
+		}
+		&.interview {
+			p { text-indent:0; margin:0.8em auto; }	
+			p:first-child{margin-top:1.0em;}
+		}
+		&.capital-diary {
+			p {
+		text-indent:1.0em;
+		margin:0 0 0;
+
+		}
+		}
+	}
+	article {
+		&.goodnews {
+			.hedline h1 {
+				text-align:center;
+			}
+			dl {
+				dt a {
+					font-family:'bentoncompbold';
+					font-size:1.1em;
+					color:black;
+					font-weight:normal;
+					text-decoration:none;
+					border-bottom:1px solid #000;
+					display:block;
+					padding:0.5em 10px;
+					margin: 0 -10px;
+					em {
+						font-family:'new_macleans_italic';
+						font-style:normal;
+					}
+					&:after {
+						font-family:Arial;
+						font-size:1.2em;
+						float:right;
+						content:'+'
+					}
+					&.open {
+						border-bottom:none;
+						
+					}
+					&.open:after {
+						font-family:Arial;
+						font-size:1.2em;
+						float:right;
+						content:"-"
+					}
+				}
+				dd {
+					margin:0 -10px 0;
+					padding: 0 10px 1.0em;
+					font-family: 'new_macleans_reg';
+					font-size:1.228em;
+					line-height:1.3em;
+					text-align:left;
+					border-bottom:2px solid #000;
+
+				}
+			}
+		}
+		&.backpages {
+			.slug {
+				font-family: 'poynterbold';
+				letter-spacing:0px;
+				font-weight:bold;
+			}
+			dl {
+				dt a {
+					.book-image {
+						float:left;
+						width:33.33%;
+						padding:20px 0 0px;
+						img {
+						width:85%;
+						}
+					}
+					
+					
+					.title-author {
+						float:right;
+						width:66.66%;
+						h3 {
+						 margin-top:15px;
+						 margin-bottom:0;
+						 font-weight:normal;
+						}
+						span {
+							font-family: 'bentonlight';
+						}
+					}
+					&.open {
+						border-bottom:1px solid #000;
+					}
+					&:after {
+						content:'';
+					}
+					&.open:after {
+						content:'';
+					}
+				}
+				dd {
+					margin:0 -10px 0;
+					padding: 10px 10px 5px;
+					font-family: 'new_macleans_reg';
+					font-size:1.1em;
+					line-height:1.3em;
+					text-align:left;
+					border-bottom:none;
+
+				}
+				
+			}
+		}
+	}
+}
+.bullets span.selected {
+	color:#000;
+}
+
+				.film {
+				  color:$film-type;
+				}
+				.arts {
+					color:$arts-type;
+				}
+				.bazaar {
+					color:$bazaar-type;
+				}
+				.books {
+					color:$books-type;
+				}
+				.help {
+					color:-type;
+				}
+				.humor {
+					color:$humor-type;
+				}
+				.media {
+					color:$media-type;
+				}
+				.music {
+					color:$music-type;
+				}
+				.stage {
+					color:$stage-type;
+				}
+				.radio {
+					color:$radio-type;
+				}
+				.tv {	
+					color:$tv-type;
+				}
+				.taste {
+					color:$taste-type;
+				}
+				.exhibit {
+					color:$exhibit-type;
+				}
+				.web {
+					color:$web-type;
+				}
+
+
+
+footer {}
+
+/* Swipeview vertical */
+#outerwrapper {
+	position:absolute;
+	top:0;
+	visibility:hidden;
+	padding: 0;
+}
+#outerwrapper h1 {
+	background:black;
+	color:white;
+	font-family:'bentoncompbold';
+	margin:0;
+	font-size:1.5em;
+	padding:5px 0;
+	text-align:center;
+}
+
+#vert-wrapper {
+	margin:0 auto;
+	width:320px;
+	height:380px;
+}
+
+#vert-wrapper .section {
+	width:100%;
+	height:100%;
+}
+
+#vert-wrapper .section .page {
+	width:100%;
+	height:100%;
+	text-align:center;
+}
+
+#vert-wrapper .section .page img {
+	max-width:100%;
+	height:auto;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+#vert-wrapper .section .page .pagename {
+	position: absolute;
+	background-color: rgba(0,0,0,0.5);
+	color: #fff;
+	padding: 5px 10px;
+	left: 5px;
+	bottom: 5px;
+}
+

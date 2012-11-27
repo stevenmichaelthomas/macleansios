@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html lang="en" class="no-js ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html lang="en" class="no-js ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html lang="en" class="no-js ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class='no-js' lang='en'>
+  <!--<![endif]-->
+  <head>
+    <meta charset='utf-8' />
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
+    <title></title>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+    <link href='css/style.css' rel='stylesheet' />
+  </head>
+  <body>
+    <div id='container'>
+      <div id='main' role='main'>
+        <article>
+         
+          <div class="hedline"><h1>Year in Pictures</h1></div>
+          <div class="abstract">A look back at some of the most memorable photos of 2012</div>
+						<a id="YIP-start" href="#">Click here to begin the slideshow</a>
+
+      </article>
+      </div>
+    </div>
+		<div id="outerwrapper">
+<h1>Maclean's 2012 Year in Pictures</h1>
+			<div id="vert-wrapper">
+							
+			</div>
+		</div>
+        <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js'></script>
+    <script>
+      window.jQuery || document.write("<script src='js/jquery-1.6.2.min.js'>\x3C/script>")
+    </script>
+    <script src='js/jquery.fancybox.js'></script>
+    <script src='js/plugins.js'></script>
+    <script src='js/script.js'></script>
+		<script src='js/swipeview.js'></script>
+		<script type="text/javascript">
+
+		var tabloid = 
+		{
+			sections: 
+			[
+				{
+					name: 'Year in pictures',
+					pages: [
+						{ 
+							filename: '<img src="images/MAC45_ABORTION01.jpg" />',
+							caption: 'Elton John and his husband.' 
+						},
+						{ 
+							filename: '<img src="images/MAC45_BOOKS99.jpg" />',
+							caption: 'Brain on Fire: My month of madness' 
+						},
+						{ 
+							filename: '<img src="images/MAC45_DETROIT02.jpg" />',
+							caption: 'The blood of free men' 
+						},
+					],
+				},
+			],
+		};
+
+		var randomColor = function() {
+			var hexstr = '79be';
+			var ret = '#fff';
+			return ret;
+		}
+
+		var _beforeShow = function(_el, _idx) {
+			_el.style.backgroundColor = 'rgba(0, 0, 0, 1.0)';
+		}
+
+		var _createPageForSection = function(el, idx) {
+			// console.log('create page',el,idx); 
+			var section = tabloid.sections[ idx ];
+			var el2 = document.createElement('div');
+			el2.className = 'section';
+			el.appendChild(el2);	
+			el.verticalswipe = new SwipeView(el2, {
+				numberOfPages: section.pages.length,
+				hastyPageFlip: true,
+				vertical: true,
+				loop: false,
+				dynamic: false,
+				createPage: function(_el, _idx) {
+					var page = section.pages[ _idx ];
+
+					var el3 = document.createElement('div');
+					el3.className = 'page';
+					el3.innerHTML = page.filename;
+
+					var el4 = document.createElement('div');
+					el4.className = 'pagename';
+					el4.innerHTML = page.caption;
+					el3.appendChild(el4);
+
+					_el.appendChild(el3);
+				},
+				beforeShow: _beforeShow
+			});	
+		};
+
+		var	sectionswipe = new SwipeView('#vert-wrapper', {
+			text: 'Horizontal swipe',
+			numberOfPages: tabloid.sections.length,
+			hastyPageFlip: true,
+			loop: false,
+			dynamic: false,
+			createPage: _createPageForSection,
+			beforeShow: function(el, idx) {
+				// console.log('before show page', idx, el.verticalswipe); 
+				el.style.backgroundColor = randomColor();
+				if( typeof(el.verticalswipe) !== 'undefined' )
+				 	el.verticalswipe.goToPage(0);
+			}
+		});
+
+		</script>
+    <!--[if lt IE 7]>
+    <script src='//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js'></script>
+    <script>
+      window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})});
+    </script>
+    <![endif]-->
+  </body>
+</html>
