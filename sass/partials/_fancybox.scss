@@ -104,12 +104,12 @@
 	position: absolute;
 	content:'X';
 	color:white;
-	top: -18px;
-	right: -18px;
+	top: -30px;
+	right: 5px;
 	width: 36px;
 	height: 36px;
 	cursor: pointer;
-	z-index: 8040;
+	z-index: 9999;
 }
 
 .fancybox-nav {
@@ -206,6 +206,11 @@
 	text-shadow: none;
 	font-weight:normal;
 	z-index: 8050;
+}
+.fancybox-title small {
+	text-transform:uppercase;
+	font-family: 'bentonsans';
+	font-size:0.7em;
 }
 
 .fancybox-opened .fancybox-title {

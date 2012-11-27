@@ -87,7 +87,7 @@ header.home-header {
 		margin:5px auto 0;
 		height:75px;
 		background:url('images/mac_logo.jpg') no-repeat;
-		background-size:298px 74px;
+		background-size:295px 72px;
 		background-color:white;
 	}
 	hr {
@@ -424,9 +424,25 @@ section.category {
 		}
 	}
 }
-.bullets span.selected {
-	color:#000;
+/* TOC FEATURED IMAGES */
+.featured-nav span.selected {
+	color:#fff;
 }
+.featured-nav {
+	position:absolute;
+	top:-5px;
+	z-index:9999;
+	left:50%;
+	font-size:1.5em;
+	color:#999;
+}
+#wrapper {
+	overflow: hidden; 
+	position: relative;
+	max-height:200px;
+	margin-bottom:14px;
+}
+/* END TOC FEATURED IMAGES */
 
 				.film {
 				  color:$film-type;
