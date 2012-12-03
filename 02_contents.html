@@ -1,0 +1,108 @@
+<html class="no-js" lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<title></title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body><div id="container">
+<header class="home-header"><h1><a href="/">Maclean's</a></h1>
+<div class="date">November 26, 2012</div></header><div id="main" class="home" role="main">
+<div class="image-featured">
+<div id="wrapper">
+
+</div>
+<div class="featured-nav">
+<span>&bull;</span><span>&bull;</span>
+</div>
+</div>
+
+<section class="category thisweek"><h1>This week</h1>
+<article><h2><a href="#?ID=3">From the editors</a></h2></article>
+<article><h2><a href="#?ID=4">Letters</a></h2></article>
+<article><h2><a href="#?ID=5">Good news/Bad news</a></h2></article>
+<article><h2><a href="#?ID=6">Newsmakers</a></h2></article>
+<article><h2><a href="#?ID=7">Opinion: <strong>Its Mean Girls for people with jobs</strong></a></h2></article>
+<article><h2><a href="#?ID=8">Opinion: <strong>The slippery road to an EU trade deal</strong></a></h2></article>
+<article><h2><a href="#?ID=9">Interview: <strong>On the U.S. elections, Americas looming fiscal cliff, and the after-effects of Ben Affleck's Argo</strong></a></h2></article>
+</section><section class="category national"><h1>National</h1>
+<article><h2><a href="#?ID=10">A national embarrassment</a></h2></article>
+<article><h2><a href="#?ID=11">Foreign convictions</a></h2></article>
+<article><h2><a href="#?ID=12">Ashes to mashes</a></h2></article>
+ <!-- <article><h2><a href="#?ID=13">Canada's most notorious</a></h2></article> -->
+<article><h2><a href="#?ID=13">A twist in time</a></h2></article>
+<article><h2><a href="#?ID=14">Capital Diary</a></h2></article>
+</section><section class="category international"><h1>International</h1>
+<article><h2><a href="#?ID=15">Brothers in charge</a></h2></article>
+<article><h2><a href="#?ID=16">Matter of inquiry</a></h2></article>
+<article><h2><a href="#?ID=17">Car owners, unite!</a></h2></article>
+<article><h2><a href="#?ID=18">Are we done yet?</a></h2></article>
+<article><h2><a href="#?ID=19">Look what the UN dragged in</a></h2></article>
+</section><section class="category business"><h1>Business</h1>
+<article><h2><a href="#?ID=20">The loneliness of a fast-food franchise</a></h2></article>
+<article><h2><a href="#?ID=21">The concierge will see you now</a></h2></article>
+<article><h2><a href="#?ID=22">A fix for Netflix</a></h2></article>
+<article><h2><a href="#?ID=23">Whats eating Apple?</a></h2></article>
+</section><section class="category society"><h1>Society</h1>
+<article><h2><a href="#?ID=24">Where the Bucks are</a></h2></article>
+</section><section class="category bak"><h1>Back pages</h1>
+<article><h2><a href="#?ID=25"><b class="music">Music</b><br /> <strong>The prince of pop</strong></a></h2></article>
+<article><h2><a href="#?ID=26"><b class="architecture">Architecture</b><br /> <strong>Building for the other 99 per cent</strong></a></h2></article>
+<article><h2><a href="#?ID=27"><b class="books">Books</b><br /> <strong>Finally, the complete Churchill biography</strong></a></h2></article>
+<article><h2><a href="#?ID=28"><b class="web">Web</b><br /> <strong>Amy Poehler's new gig: teen angel</strong></a></h2></article>
+<article><h2><a href="#?ID=29"><b class="feschuk">Feschuk</b><br /> <strong>Anticipation, not denial, is the first step</strong></a></h2></article>
+</section><section class="category theend"><h1>The end</h1>
+<article><h2><a href="#?ID=31">Paul and Morris Longmire, 1940-2012</a></h2></article>
+</section><footer></footer>
+</div>
+<script src="js/jquery-1.6.2.min.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/script.js"></script>
+<script src="js/swipeview.js"></script>
+			<script>
+			var	carousel,
+				el,
+				i,
+				page,
+				slides = [
+					'<a href="#?ID=25"><img style="position;relative;max-height:250px;" src="images/feature1.jpg"><div class="feature-caption">The prince of pop</div></a>',
+					'<a href="#?ID=15"><img style="max-height:250px;" src="images/feature3.jpg"><div class="feature-caption">Brothers in charge</div></a>'
+				];
+
+			carousel = new SwipeView('#wrapper', {
+				numberOfPages: slides.length,
+				hastyPageFlip: true
+			});
+
+			// Load initial data
+			for (i=0; i<3; i++) {
+				page = i==0 ? slides.length-1 : i-1;
+
+				el = document.createElement('span');
+				el.innerHTML = slides[page];
+				carousel.masterPages[i].appendChild(el)
+				$('div.featured-nav span:eq(' + carousel.pageIndex + ')').addClass('selected');
+			}
+
+			carousel.onFlip(function () {
+				var el,
+					upcoming,
+					i;
+
+				for (i=0; i<3; i++) {
+					upcoming = carousel.masterPages[i].dataset.upcomingPageIndex;
+
+					if (upcoming != carousel.masterPages[i].dataset.pageIndex) {
+						el = carousel.masterPages[i].querySelector('span');
+						el.innerHTML = slides[upcoming];
+					}
+				}
+				$('div.featured-nav span').removeClass('selected');
+				$('div.featured-nav span:eq(' + carousel.pageIndex + ')').addClass('selected');
+
+			});
+			</script>
+</div></body>
+</html>

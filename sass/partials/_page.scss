@@ -14,10 +14,13 @@ body, select, input, textarea {
 // Add your own custom styles below
 //-----------------------------------
 
-body {}
+body {
+	margin: 12px;	
+}
 
 #container {
-  width:100%;
+  width:99.8%;
+
 }
 
 header.article-nav-header {
@@ -81,12 +84,13 @@ header.article-nav-header {
 }
 header.home-header {
 	text-align:center;
+	margin-top:-5px;
 	h1 { 
 		text-indent:-9999px;
 		width:300px;
-		margin:5px auto 0;
+		margin:0px auto 0;
 		height:75px;
-		background:url('images/mac_logo.jpg') no-repeat;
+		background:url('images/mac_logo.png') no-repeat;
 		background-size:295px 72px;
 		background-color:white;
 	}
@@ -94,11 +98,12 @@ header.home-header {
 		position:absolute;
 	}
 	.date {
+		margin-top:5px;
 		text-transform:uppercase;
 		font-family: 'new_macleans_reg';
 		font-weight:900;
-		font-size:16px;
-		letter-spacing: 3px;
+		font-size:19px;
+		letter-spacing: 4px;
 	}
 }
 section.category {
@@ -125,7 +130,7 @@ section.category {
 	h2 {
 		font-family: 'bentonsansbold';
 		font-weight:300;
-		font-size: 1.1875em;
+		font-size: 18px;
 		padding-left:0;
 		line-height:1.1em;
 		a {
@@ -197,7 +202,7 @@ section.category {
 			}
 		}
 	}
-	margin: 12px 12px 12px;
+	
 	&.home {
 		margin-top:10px;
 	}
@@ -425,22 +430,27 @@ section.category {
 	}
 }
 /* TOC FEATURED IMAGES */
-.featured-nav span.selected {
-	color:#fff;
+.featured-nav span {
+	position:relative;
+	top:-7px;
+	margin-left:3px;
 }
+.featured-nav span.selected {
+	color:rgba(0, 0, 0, 0.5);
+}
+
 .featured-nav {
-	position:absolute;
-	top:-5px;
 	z-index:9999;
 	left:50%;
-	font-size:1.5em;
-	color:#999;
+	font-size:20px;
+	color:rgba(0, 0, 0, 0.2);
+	text-align:right;
+	margin-bottom:-10px;
 }
 #wrapper {
 	overflow: hidden; 
 	position: relative;
 	max-height:200px;
-	margin-bottom:14px;
 }
 /* END TOC FEATURED IMAGES */
 
@@ -543,4 +553,24 @@ footer {}
 	left: 5px;
 	bottom: 5px;
 }
-
+.feature-caption {
+text-align:left;
+position:relative;
+top:-25px;
+text-shadow:2px 2px 5px #000;
+color:white;
+width:280px;
+margin:0 auto;
+font-family:'bentonsansbold';
+font-size:16px;
+font-weight:normal;
+}
+span a {
+	text-decoration:none;
+}
+#cover-image {
+	height:427px;
+	position:relative;
+    margin:0 auto;
+    display:block;
+}

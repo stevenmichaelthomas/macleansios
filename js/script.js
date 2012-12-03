@@ -2,7 +2,10 @@
 
 */
 
+
+
 $('document').ready(function(){
+
 	$('#YIP-start').click(function(e){
 		e.preventDefault();
 		$('div#container').hide();
@@ -24,6 +27,8 @@ $('document').ready(function(){
 		openEffect	: 'none',
 		closeEffect	: 'none'
 	});
+
+
 	
 });
 (function($) {
