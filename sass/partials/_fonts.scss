@@ -17,7 +17,13 @@
     font-style: normal;
 
 }
-
+@font-face {
+    font-family: 'bentonxcomp';
+    src: url('fonts/BentonSansExtraComp-Reg.eot');
+    src: local('☺'), url('fonts/BentonSansExtraComp-Reg.woff') format('woff'), url('fonts/BentonSansExtraComp-Reg.ttf') format('truetype'), url('fonts/BentonSansExtraComp-Reg.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 
 

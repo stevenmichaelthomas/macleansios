@@ -11,12 +11,9 @@ $('document').ready(function(){
 		$('div#container').hide();
 		$('div#outerwrapper').css('visibility', 'visible');
 	});
-	var contHeight = $(window).height();
-	var imgHeight = $('#vert-wrapper .section .page img').height();
 	
 	
 	$(".fancybox").fancybox({
-		closeClick	: true,
 		width       : 320,
 		padding     : 0,
 		helpers : {
@@ -34,19 +31,23 @@ $('document').ready(function(){
 (function($) {
     
   var allPanels = $('.accordion > dd').hide();
-    
-  $('.accordion > dt > a').click(function() {
+  $('.accordion > dt > a').live('click', function() {
+  	var something = $(this);
     allPanels.slideUp('fast');
     $('.accordion > dt > a').removeClass('open');
     if ($(this).parent().next().css('display') === 'none'){
-    	$(this).parent().next().slideDown('fast');
-    	$(this).addClass('open')
+    	$(this).parent().next().slideDown('fast', function(){
+    		$('body').animate({scrollTop : something.offset().top}, 'fast');
+    	});
+    	$(this).addClass('open');	
+    	
     	return false;
 	} else {
 		$(this).parent().next().slideUp('fast');
 		$(this).removeClass('open');
 		return false;
 	}
+	
   });
 
 })(jQuery);
