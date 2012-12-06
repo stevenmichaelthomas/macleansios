@@ -16,7 +16,10 @@ body, select, input, textarea {
 
 body {
 	margin: 12px;	
-	margin-bottom:50px;
+	margin-bottom:55px;
+}
+a {
+	color: rgba(44,170,226,1.0);
 }
 
 #container {
@@ -214,9 +217,30 @@ section.category {
 	max-width:100%;
 	}
 	.image-featured {
+		position:relative;
+		width:297px;
+		margin:0 auto;
 		text-align:center;
-		a img {
+		a{ 
+			height:100%;
+		img {
+		  max-width:100%;
 		  max-height:250px;
+		}
+		a {
+			-webkit-tap-highlight-color: pink;
+		}
+		.caption-opener {
+			position:absolute;
+			bottom:0px;
+			right:0px;
+		  	width:48px;
+			height:48px;
+			color:transparent;
+			text-indent:-9999px;
+			background:url('images/image_caption@2x.png') no-repeat 1px;
+			background-size:48px 48px;
+		  }
 		}
 	}
 	.editor-image-wrapper {
@@ -259,7 +283,7 @@ section.category {
 		text-transform:uppercase;
 		text-align:center;
 		letter-spacing:3px;
-		font-size:0.8em;
+		font-size:13px;
 		margin-top:1.8em;
 	}
 	blockquote {
@@ -283,7 +307,7 @@ section.category {
 		margin-bottom:0.2em;
 		text-align:center;
 		line-height:0.95em;
-		font-size:2.4em;
+		font-size:38px;
 	}
 	.abstract {
 		font-family: 'bentonsans';
@@ -295,7 +319,7 @@ section.category {
 	.byline {
 		font-family:'bentonblack';
 		margin: 1.4em 0 0.9em;
-		font-size:0.737em;
+		font-size:12px;
 		text-align:center;
 		text-transform:uppercase;
 	}
@@ -305,19 +329,31 @@ section.category {
 		line-height:1.22em;
 		text-align:left;
 		p {
-		text-indent:1.0em;
+		text-indent:1.5em;
 		margin:0 0 0;
 
 		}
+		em { font-family:'new_macleans_italic';font-style:normal; }
 		p:first-child {
 			text-indent:0;
 			margin-top:1.0em;
 		}
+		/*  MACLEANS LEAF
+		p:last-child:after {
+			width:20px;
+			height:20px;
+			content:'xx';
+			color:transparent;
+			text-indent:-9999px;
+			background:url('images/endnote@2x.png') no-repeat 1px;
+			background-size:14px 18px;
+		}
+		*/
 		&.letters {
 		p { text-indent:0; margin:0 auto; }
 		b { display:block; margin: 0.8em 0 0; font-family:'bentoncompbold';
 		font-weight:normal; font-size:1.09em; }
-		em { display:block; margin:0.2em 0 0.8em; font-family:'new_macleans_italic';font-style:normal; }
+		em { display:block; margin:0.2em 0 0.8em; }
 		}
 		&.interview {
 			p { text-indent:0; margin:0.8em auto; }	
@@ -360,33 +396,25 @@ section.category {
 			dl {
 				dt a {
 					font-family:'bentoncompbold';
-					font-size:1.1em;
+					font-size:22px;
 					color:black;
 					font-weight:normal;
 					text-decoration:none;
 					border-bottom:1px solid $toc-borders;
 					display:block;
-					padding:0.5em 0;
+					padding:0.5em 16px 0em 0;
 					margin: 0 auto;
+					background:url('images/show-bttn@2x.png') no-repeat right 65%;
+					background-size: 12px 12px;
 					em {
 						font-family:'new_macleans_italic';
 						font-style:normal;
 					}
-					&:after {
-						font-family:Arial;
-						font-size:1.2em;
-						float:right;
-						content:'+'
-					}
 					&.open {
 						border-bottom:none;
+						background:url('images/hide-bttn@2x.png') no-repeat right 65%;
+						background-size: 12px 12px;
 						
-					}
-					&.open:after {
-						font-family:Arial;
-						font-size:1.2em;
-						float:right;
-						content:"-"
 					}
 				}
 				dd {
@@ -411,6 +439,16 @@ section.category {
 			dl {
 				dt a {
 				display:block;
+				padding-bottom:0.8em;
+				padding-top:0;
+				background-position:right 10%;
+				&.open {
+						border-bottom:none !important;
+						background:url('images/hide-bttn@2x.png') no-repeat right 10%;
+						background-size: 12px 12px;
+						
+					}
+			
 					.book-image {
 						float:left;
 						width:33.33%;
@@ -419,15 +457,13 @@ section.category {
 						width:85%;
 						}
 					}
-					
-					
 					.title-author {
 						float:right;
 						width:66.66%;
 						h3 {
 						 margin-top:18px;
 						 margin-bottom:0;
-						 font-size:1.1em;
+						 font-size:1.0em;
 						 line-height:1.10em;
 						 font-weight:normal;
 						}
@@ -435,9 +471,6 @@ section.category {
 							font-family: 'bentoncomp';
 							font-weight:100;
 						}
-					}
-					&.open {
-						border-bottom:1px solid $toc-borders;
 					}
 					&:after {
 						content:'';
@@ -448,12 +481,12 @@ section.category {
 				}
 				dd {
 					margin:0 0 0;
-					padding: 10px 0px 5px;
+					padding: 10px 0px 10px;
 					font-family: 'new_macleans_reg';
 					font-size:1.228em;
 					line-height:1.3em;
 					text-align:left;
-					border-bottom:none;
+					border-bottom:1px solid $toc-borders;
 
 				}
 				

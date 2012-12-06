@@ -29,7 +29,7 @@
 
 .fancybox-skin {
 	position: relative;
-	background: pink;
+	background: transparent;
 	color: #444;
 	text-shadow: none;
 	-webkit-border-radius: 4px;
@@ -53,6 +53,12 @@
 
 .fancybox-inner {
 	overflow: hidden;
+	
+}
+.fancybox-inner img {
+	max-height:250px !important;
+	margin:0 auto;
+	width:auto !important;
 }
 
 .fancybox-type-iframe .fancybox-inner {
@@ -102,7 +108,8 @@
 
 .fancybox-close {
 	position: absolute;
-	content:'×';
+	background:url('images/close_button@2x.png') no-repeat 10px 10px;
+	background-size:16px 16px;
 	color:white;
 	top: -37px;
 	right: 1px;
@@ -202,7 +209,6 @@
 	visibility: hidden;
 	font-family: 'bentonlight';
 	font-size:1.0em;
-
 	line-height:1.2em;
 	position: relative;
 	text-shadow: none;
