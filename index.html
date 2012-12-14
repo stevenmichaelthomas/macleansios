@@ -23,12 +23,13 @@
       </header>
       <div id='main' class="home" role='main'>
         	<div class="image-featured">
-					<div id="wrapper" style="overflow: hidden; position: relative;max-height:200px">
+<div id="wrapper">
 
-					</div>
-				<div class="bullets" style="text-align:right;font-size:1.5em;color:#999">
-				<span>&bull;</span><span>&bull;</span><span>&bull;</span></div>
-				</div>
+</div>
+<div class="featured-nav">
+<span>&bull;</span><span>&bull;</span>
+</div>
+</div>
         <section class="category thisweek">
           <h1>This week</h1>
           <article>
@@ -97,52 +98,48 @@
     <script src='js/script.js'></script>
 		<script src="js/swipeview.js"></script>
 		<script>
-		var	carousel,
-			el,
-			i,
-			page,
-			slides = [
-				'A',
-				'B',
-				'C'
-			];
+      var carousel,
+        el,
+        i,
+        page,
+        slides = [
+          'AAAAA',
+          'BBBBB'
+        ];
 
-		carousel = new SwipeView('#wrapper', {
-			numberOfPages: slides.length,
-			hastyPageFlip: true
-		});
+      carousel = new SwipeView('#wrapper', {
+        numberOfPages: slides.length,
+        hastyPageFlip: true
+      });
 
-		// Load initial data
-		for (i=0; i<3; i++) {
-			page = i==0 ? slides.length-1 : i-1;
+      // Load initial data
+      for (i=0; i<3; i++) {
+        page = i==0 ? slides.length-1 : i-1;
 
-			el = document.createElement('span');
-			el.innerHTML = slides[page];
-			carousel.masterPages[i].appendChild(el)
-			$('div.bullets span:eq(' + carousel.pageIndex + ')').addClass('selected');
-		}
+        el = document.createElement('span');
+        el.innerHTML = slides[page];
+        carousel.masterPages[i].appendChild(el)
+        $('div.featured-nav span:eq(' + carousel.pageIndex + ')').addClass('selected');
+      }
 
-		carousel.onFlip(function () {
-			var el,
-				upcoming,
-				i;
+      carousel.onFlip(function () {
+        var el,
+          upcoming,
+          i;
 
-			for (i=0; i<3; i++) {
-				upcoming = carousel.masterPages[i].dataset.upcomingPageIndex;
+        for (i=0; i<3; i++) {
+          upcoming = carousel.masterPages[i].dataset.upcomingPageIndex;
 
-				if (upcoming != carousel.masterPages[i].dataset.pageIndex) {
-					el = carousel.masterPages[i].querySelector('span');
-					el.innerHTML = slides[upcoming];
-				}
-			}
-			$('div.bullets span').removeClass('selected');
-			$('div.bullets span:eq(' + carousel.pageIndex + ')').addClass('selected');
+          if (upcoming != carousel.masterPages[i].dataset.pageIndex) {
+            el = carousel.masterPages[i].querySelector('span');
+            el.innerHTML = slides[upcoming];
+          }
+        }
+        $('div.featured-nav span').removeClass('selected');
+        $('div.featured-nav span:eq(' + carousel.pageIndex + ')').addClass('selected');
 
-		});
-
-
-
-		</script>
+      });
+      </script>
 </div>
   </body>
 </html>

@@ -6,11 +6,34 @@
 
 $('document').ready(function(){
 
-	$('#YIP-start').click(function(e){
-		e.preventDefault();
+	$('#firstBatch').click(function(e){
 		$('div#container').hide();
-		$('div#outerwrapper').css('visibility', 'visible');
+		$('div.image-featured').css('visibility', 'hidden');
+		e.preventDefault();
+		$('div#first').css('visibility', 'visible');
 	});
+	$('#secondBatch').click(function(e){
+		$('div#container').hide();
+		$('div.image-featured').css('visibility', 'hidden');
+		e.preventDefault();
+		$('div#second').css('visibility', 'visible');
+	});
+	$('#thirdBatch').click(function(e){
+		$('div#container').hide();
+		$('div.image-featured').css('visibility', 'hidden');
+		e.preventDefault();
+		$('div#third').css('visibility', 'visible');
+	});
+	$('div#close-YIP').click(function(e) {
+		e.preventDefault();
+		$('div.image-featured').css('visibility', 'hidden');
+		$('div#container').fadeIn();
+	});
+	$('a.toggle-caption').click(function(e) {
+		e.preventDefault();
+		$('div.caption-YIP').text($(this).attr('title')).fadeToggle();
+	});
+
 	
 	
 	$(".fancybox").fancybox({

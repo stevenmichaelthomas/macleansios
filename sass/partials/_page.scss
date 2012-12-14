@@ -19,8 +19,23 @@ body {
 	margin-bottom:55px;
 }
 a {
-	color: rgba(44,170,226,1.0);
+	color: rgba(215,25,32,1.0);
+	text-decoration:none;
 }
+a:hover {
+	color: rgba(215,25,32,1.0);
+	text-decoration:none;
+}
+p {
+		text-indent:1.5em;
+		margin:0 0 0;
+
+		}
+		em { font-family:'new_macleans_italic';font-style:normal; }
+		p:first-child {
+			text-indent:0;
+			margin-top:1.0em;
+		}
 
 #container {
   width:99.8%;
@@ -324,8 +339,17 @@ section.category {
 		text-transform:uppercase;
 	}
 	.content {
+		.head-furniture {
+			float:left;
+			position:relative;
+			top:-14px;
+			width:82px;
+			height:105px;
+			margin-bottom:-15px;
+			margin-right:6px;
+		}
 		font-family: 'macleans_reg';
-		font-size:1.228em;
+		font-size:20px;
 		line-height:1.22em;
 		text-align:left;
 		p {
@@ -380,6 +404,7 @@ section.category {
 			.hedline h1 {
 				font-family:'bentonxcomp';
 				font-size:50px;
+				text-transform:uppercase;
 			}
 			.abstract {
 				margin-bottom:1.0em;
@@ -493,9 +518,83 @@ section.category {
 			}
 		}
 	}
+	div.weblinks {
+		font-family: 'poyntersans';
+		font-size:16px;
+		line-height:18px;
+		hr { 
+			margin: 12px auto 7px;
+		}
+		a.url {
+			font-style:italic;
+		}
+		a.twitter {
+			color:rgba(44,170,226,1.0);
+		}
+	}
+
+	article.yip {
+		margin-top:167px;
+		color:white;
+		.slug {
+			background:url('images/YIP-banner.png') no-repeat 50%;
+			background-size:146px 19px;
+			font-family:bentonsansbold;
+			height:19px;
+			text-indent:-9999px;
+			font-size:12px;
+			letter-spacing:0;
+		}
+		.hedline h1 {
+			font-family:'bentonsansbold';
+			font-size:84px;
+			line-height:1em;
+			margin:5px 0;
+			text-shadow:1px 1px 4px #000;
+		}
+		.abstract {
+			text-shadow:0px 0px 4px #000;
+			font-size:14px;
+		}
+		.yip-nav { 
+			margin-top:12px;
+			text-align:center;
+			a {
+				font-family:bentonsans;
+				padding: 2px 15px;
+				font-size:12px;
+				border-right:1px solid #443c3a;
+				color:white;
+				text-transform:uppercase;
+				&:last-child {
+					border-right:none;
+				}
+
+			}
+		}
+	}
+}
+div#close-yip {
+	background:url('images/close_button@2x.png') no-repeat 12px 12px;
+	background-size:12px 12px;
+	position:absolute;
+	right:0;
+	top:0px;
+	width:12px;
+	height:12px;
+	text-indent:-9999px;
+	padding:12px;
+}
+body.yip-body {
+	background:url('images/YIP-bg.png') no-repeat;
+	background-size:320px 586px;
+	background-color:white;
+}
+.twitter-link {
+	display:block; margin: 2px 0 0; font-family:'bentoncompbold';color:rgba(20, 170, 232, 1.0);text-decoration:none;
 }
 /* TOC FEATURED IMAGES */
-.featured-nav span {
+.featured-nav span, .featured-nav2 span, .featured-nav3 span {
 	position:relative;
 	top:-7px;
 	margin-left:3px;
@@ -504,7 +603,7 @@ section.category {
 	color:rgba(0, 0, 0, 0.5);
 }
 
-.featured-nav {
+.featured-nav, .featured-nav2, .featured-nav3 {
 	z-index:9999;
 	left:50%;
 	font-size:20px;
@@ -512,11 +611,77 @@ section.category {
 	text-align:right;
 	margin-bottom:-10px;
 }
-#wrapper {
-	overflow: hidden; 
-	position: relative;
-	max-height:200px;
+#wrapper, #wrapper1, #wrapper2, #wrapper3 {
+  overflow: hidden;
+  max-height:200px;
 }
+#wrapper1, #wrapper2, #wrapper3 {
+	width:320px;
+	max-height:none;
+	img {
+		width:300px;
+		margin-left:10px;
+	}
+
+	.caption-YIP {
+		display:none;
+		color:#fff;
+		font-family:bentonsans;
+		font-size:16px;
+		width:94%;
+		margin-left:0px;
+		margin-right:8px;
+		line-height:19px;
+		background:rgba(0, 0, 0, 0.5);
+		padding:5px 15px;
+		position:fixed;
+		bottom:105px;
+		strong {
+			font-family:bentonsansbold;
+			color:red;
+			line-height:19px;
+			text-transform:uppercase;
+		}
+		b {
+			font-family:bentonsansbold;
+			color:white;
+			line-height:19px;
+		}
+		small {
+			text-transform:uppercase;
+			font-size:9px;
+			display:block;
+		}
+	}
+}
+#first, #second, #third {
+	padding-top:35px;
+  	width:320px;height:401px;background:black;position:absolute;top:0;left:0;visibility:hidden;
+  	.toggle-caption {
+  		position:fixed;
+		bottom:50px;
+		right:0px;
+		width:48px;
+		height:48px;
+		color:transparent;
+		text-indent:-9999px;
+		background:url('images/image_caption@2x.png') no-repeat 1px;
+		background-size:48px 48px;
+  	}
+  	.featured-nav, .featured-nav2, .featured-nav3 {
+  		position:fixed;
+  		bottom:60px;
+  		left:10px;
+  		span {
+			color:white;
+			&.selected {
+				color:red;
+			}
+		}
+	}
+
+}
+
 /* END TOC FEATURED IMAGES */
 
 				.film {
@@ -535,7 +700,7 @@ section.category {
 					color:$books-type;
 				}
 				.help {
-					color:-type;
+					color:$help-type;
 				}
 				.humor {
 					color:$humor-type;
